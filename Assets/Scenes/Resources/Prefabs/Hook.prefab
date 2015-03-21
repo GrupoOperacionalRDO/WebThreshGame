@@ -16,7 +16,7 @@ GameObject:
   - 96: {fileID: 9671642}
   m_Layer: 0
   m_Name: Hook
-  m_TagString: Untagged
+  m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4fe1b53312f74724ab460c1ce84b97a8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -82,7 +82,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141432}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -107,9 +107,9 @@ TrailRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: 1
-  m_EndWidth: 1
+  m_Time: 3
+  m_StartWidth: .200000003
+  m_EndWidth: .200000003
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -139,9 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199964776fefada4482c48b9c15a2e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWidth: .0500000007
-  endWidth: .0500000007
-  speed: 3
+  speed: 8
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

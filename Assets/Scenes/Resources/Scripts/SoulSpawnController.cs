@@ -15,9 +15,9 @@ public class SoulSpawnController : MonoBehaviour {
 	{
 	if (++count >= respawntime * 60) {
 			count=0;
-			float z = Random.Range (-5.0F, 4.5F);
-			float x = Random.Range (-4.0F, 1.0F);
-			Instantiate(soul, new Vector3(x, 1, z), Quaternion.identity);
+			float z = Random.Range (-4.5F, 3.8F);
+			float x = Random.Range (-4.0F, -3.0F);
+			Instantiate(soul, new Vector3(x, 0.51f, z), Quaternion.identity);
 			
 		}
 	}
