@@ -17,7 +17,7 @@ public class SoulSpawnController : MonoBehaviour {
 			count=0;
 			float z = Random.Range (-4.5F, 3.8F);
 			float x = Random.Range (-4.0F, -3.0F);
-			Instantiate(soul, new Vector3(x, 0.51f, z), Quaternion.identity);
+			Instantiate(soul, new Vector3(x, 1f, z), Quaternion.identity);
 			
 		}
 	}

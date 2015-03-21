@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &125380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 425380}
+  - 33: {fileID: 3325380}
+  - 23: {fileID: 2325380}
+  - 95: {fileID: 9525380}
+  m_Layer: 0
+  m_Name: HOOK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &141432
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,9 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 441432}
-  - 33: {fileID: 3341432}
   - 65: {fileID: 6541432}
-  - 23: {fileID: 2341432}
   - 54: {fileID: 5418706}
   - 114: {fileID: 11477810}
   - 96: {fileID: 9671642}
@@ -21,6 +37,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &425380
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125380}
+  m_LocalRotation: {x: .0616284125, y: -.0616284125, z: -.704416037, w: .704416037}
+  m_LocalPosition: {x: -.128000006, y: 0, z: .495999992}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 441432}
+  m_RootOrder: 0
 --- !u!4 &441432
 Transform:
   m_ObjectHideFlags: 1
@@ -28,24 +56,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.00999999, y: 1.54999995, z: .920000017}
+  m_LocalPosition: {x: 1.00999999, y: 1.54999995, z: 1.59500003}
   m_LocalScale: {x: .5, y: .5, z: .5}
-  m_Children: []
+  m_Children:
+  - {fileID: 425380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2341432
+--- !u!23 &2325380
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141432}
+  m_GameObject: {fileID: 125380}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 23b1c07368cc8eb4aa59ab2bf2b286e5, type: 2}
+  - {fileID: 2100000, guid: d075be3b5cef299478a8dd1a7759c204, type: 2}
+  - {fileID: 2100000, guid: fb17cbe317e3c3d4f890680c0b105563, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -53,13 +83,13 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3341432
+--- !u!33 &3325380
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141432}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 125380}
+  m_Mesh: {fileID: 4300000, guid: 9784a47e29812fc4e92a21d0feeaf97b, type: 3}
 --- !u!54 &5418706
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -85,8 +115,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.24197483, y: .306445867, z: 1.3304286}
+  m_Center: {x: -.263349771, y: .0498759747, z: .491107464}
+--- !u!95 &9525380
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9784a47e29812fc4e92a21d0feeaf97b, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &9671642
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +144,7 @@ TrailRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4fe1b53312f74724ab460c1ce84b97a8, type: 2}
+  - {fileID: 2100000, guid: 7d76c6964b720a84ea4a1bf064c1f642, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -108,8 +153,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 3
-  m_StartWidth: .200000003
-  m_EndWidth: .200000003
+  m_StartWidth: .100000001
+  m_EndWidth: .100000001
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -139,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199964776fefada4482c48b9c15a2e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 10
   range: 7
 --- !u!1001 &100100000
 Prefab:
