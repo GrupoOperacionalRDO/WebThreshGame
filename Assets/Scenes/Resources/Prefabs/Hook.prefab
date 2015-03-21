@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.00999999, y: 1.54999995, z: -6}
+  m_LocalPosition: {x: 1.00999999, y: 1.54999995, z: .920000017}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4fe1b53312f74724ab460c1ce84b97a8, type: 2}
+  - {fileID: 2100000, guid: 23b1c07368cc8eb4aa59ab2bf2b286e5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -113,16 +113,16 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4293454056
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4293519849
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4293585642
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4293519849
     m_Color[4]:
       serializedVersion: 2
       rgba: 16777215
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  range: 7
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
