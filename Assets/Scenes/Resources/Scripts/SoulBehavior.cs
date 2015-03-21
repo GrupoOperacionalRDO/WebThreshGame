@@ -5,22 +5,21 @@ public class SoulBehavior : MonoBehaviour {
 
 	public float speed;
 
-	void Start () 
-	{
+	void Start () {
 		gameObject.GetComponent<Rigidbody> ().velocity = transform.right * speed;
 	}
 	
 
-	void Update () 
-	{
-		// Metodo inutil. Deleta
+	void Update () {
+
+			
 	}
 		
 	protected void OnTriggerEnter(Collider collider)
-	{
-		if (collider.gameObject.tag!="Soul")
 		{
-			DestroyObject(this.gameObject);
-		}
+		if (collider.gameObject.tag!="Soul")
+			{
+				DestroyObject(this.gameObject);
+			}
 	}
-}
+	}
