@@ -19,7 +19,15 @@ public class SoulBehavior : MonoBehaviour {
 	{
 		if (collider.gameObject.tag!="Soul")
 		{
-			DestroyObject(this.gameObject);
+			DestroySoul ();
+		}
+	}
+
+	public void DestroySoul(){
+		if (Application.isPlaying) {
+			DestroyObject (this.gameObject);
+		} else { //precisa pros testes
+			DestroyImmediate(this.gameObject);
 		}
 	}
 }
