@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  range: 7
+  range: 15
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
