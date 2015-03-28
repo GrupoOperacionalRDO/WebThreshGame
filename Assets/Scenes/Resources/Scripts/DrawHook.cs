@@ -36,7 +36,16 @@ public class DrawHook : MonoBehaviour
 
 	void DestroyHook(){
 		hookmodel.SetActive (true);
-		DestroyObject (this.gameObject);
+		if (Application.isPlaying) {
+			DestroyObject (this.gameObject);
+		} else { //precisa pros testes
+			DestroyImmediate(this.gameObject);
+		}
+	}
+
+	public void testDestroyHook(){
+		Start ();
+		DestroyHook ();
 	}
 
 }
