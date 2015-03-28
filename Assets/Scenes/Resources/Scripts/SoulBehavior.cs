@@ -17,7 +17,7 @@ public class SoulBehavior : MonoBehaviour {
 		
 	protected void OnTriggerEnter(Collider collider)
 	{
-		if (collider.gameObject.tag!="Soul")
+		if (collider.gameObject.tag!="Soul" && collider.gameObject.tag!="SoulAnimation")
 		{
 			DestroySoul ();
 		}

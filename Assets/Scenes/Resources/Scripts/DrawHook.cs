@@ -5,6 +5,7 @@ public class DrawHook : MonoBehaviour
 {
 	public float speed;
 	public float range; 
+	public GameObject GetPointAnimation;
 	private float spawnX;
 	private float spawnZ;
 	private GameObject hookmodel;
@@ -29,8 +30,10 @@ public class DrawHook : MonoBehaviour
 	void OnTriggerEnter(Collider collider){
 		if (collider.tag == "Soul") {	//adiciona um ponto se colidir com uma soul
 			GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDController>().addScore(1);
+			Instantiate (GetPointAnimation, transform.position, transform.rotation); //Instancia o hook com esse angulo
 		}
-		DestroyHook ();
+		if (collider.tag != "SoulAnimation")
+			DestroyHook ();
 
 	}
 

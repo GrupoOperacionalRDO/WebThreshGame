@@ -14,13 +14,16 @@ using System.Collections;
 public class HUDController : MonoBehaviour {
 
 	float score = 0;
-
+	
+	public AudioClip pointSoundV1;
+	private AudioSource source;
 	/** Start e Update são utilizados para sincronizar o valor da variável score
 	 *  com o componente Texto da HUD.
 	 */
 
 	void Start () {
 		gameObject.GetComponentInChildren<Text> ().text = "Score: " + score.ToString ();
+		source = GetComponent<AudioSource>();
 	}
 
 	void Update () {
@@ -39,6 +42,7 @@ public class HUDController : MonoBehaviour {
 	public void addScore(float points){
 		this.score += points;
 		this.Update();
+		source.PlayOneShot (pointSoundV1, 1);
 	}
 
 	public void removeScore(float points){

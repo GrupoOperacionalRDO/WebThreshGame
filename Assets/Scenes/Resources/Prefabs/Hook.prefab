@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   range: 15
+  GetPointAnimation: {fileID: 191548, guid: 0241f1d64edd67545b1ee0957ad853bd, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
