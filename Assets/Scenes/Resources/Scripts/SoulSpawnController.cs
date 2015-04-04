@@ -13,11 +13,13 @@ public class SoulSpawnController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	if (++count >= respawntime * 60) {
-			count=0;
-			float z = Random.Range (-4.5F, 8F);
-			float x = Random.Range (-10.0F, -8.0F);
-			spawnSoul(x,z);
+		if (Time.timeScale != 0) {
+			if (++count >= respawntime * 60) {
+				count = 0;
+				float z = Random.Range (-4.5F, 8F);
+				float x = Random.Range (-10.0F, -8.0F);
+				spawnSoul (x, z);
+			}
 		}
 	}
 

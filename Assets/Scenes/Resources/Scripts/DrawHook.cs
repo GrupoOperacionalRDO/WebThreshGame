@@ -25,6 +25,8 @@ public class DrawHook : MonoBehaviour
 		if (currentRange > range) {  //se ultrapassar o limite da tela, destroi o hook
 			DestroyHook ();
 		}
+		if (Time.timeScale == 0) //se o jogo estiver pausado, destroi
+			DestroyHook ();
 	}
 	
 	void OnTriggerEnter(Collider collider){
