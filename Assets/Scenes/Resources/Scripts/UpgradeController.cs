@@ -7,18 +7,18 @@ public class UpgradeController : MonoBehaviour {
 	public float range;
 	public int inbound;
 	void Start () {
-		speed = 10.0F;
-		range = 10.0F;
+		speed = 100F;
+		range = 100F;
 		inbound = 1;
 	}
 	//Get's
 	public float getSpeed()
 	{
-		return speed;	
+		return speed/10;	
 	}
 	public float getRange()
 	{
-		return range;	
+		return range/10;	
 	}
 	public int getInbound()
 	{
@@ -27,11 +27,11 @@ public class UpgradeController : MonoBehaviour {
 	//Increase's
 	void increaseSpeed()
 	{
-		speed++;	
+		speed+= 5;	
 	}
 	void increaseRange()
 	{
-		range++;	
+		range+= 5;	
 	}
 	void increaseInbound()
 	{
