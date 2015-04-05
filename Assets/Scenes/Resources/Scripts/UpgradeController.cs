@@ -3,14 +3,13 @@ using System.Collections;
 
 public class UpgradeController : MonoBehaviour {
 
-	public float speed, speedLevel;
-	public float range, rangeLevel;
-	public int inbound, inboundLevel;
+	public float speed;
+	public float range;
+	public int inbound;
 	void Start () {
 		speed = 10.0F;
 		range = 10.0F;
 		inbound = 1;
-		speedLevel = rangeLevel = inboundLevel = 1;
 	}
 	//Get's
 	public float getSpeed()
@@ -25,46 +24,18 @@ public class UpgradeController : MonoBehaviour {
 	{
 		return inbound;	
 	}
-	//Get Level's
-	public float getSpeedLevel()
-	{
-		return speedLevel;	
-	}
-	public float getRangeLevel()
-	{
-		return rangeLevel;	
-	}
-	public int getInboundLevel()
-	{
-		return inboundLevel;	
-	}
 	//Increase's
-	public void increaseSpeed()
+	void increaseSpeed()
 	{
-		float soulNeed = Mathf.Pow (speedLevel, 2); //Calculo da quantidade necessaria
-		if (GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore () >= soulNeed) {
-			GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().removeScore(soulNeed);
-			speed++;
-			speedLevel++;	
-		}
+		speed++;	
 	}
-	public void increaseRange()
+	void increaseRange()
 	{
-		float soulNeed = Mathf.Pow (rangeLevel, 2); //Calculo da quantidade necessaria
-		if (GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore () >= soulNeed) {
-			GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().removeScore(soulNeed);
-			range++;	
-			rangeLevel++;		
-		}
+		range++;	
 	}
-	public void increaseInbound()
+	void increaseInbound()
 	{
-		float soulNeed = Mathf.Pow (inboundLevel, 2); //Calculo da quantidade necessaria
-		if (GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore () >= soulNeed) {
-			GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().removeScore(soulNeed);
-			inbound++;	
-			inboundLevel++;	
-		}
+		inbound++;	
 	}
 
 
