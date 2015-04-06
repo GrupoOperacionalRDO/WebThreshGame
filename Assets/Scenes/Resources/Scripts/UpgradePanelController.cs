@@ -4,20 +4,35 @@ using System.Collections;
 
 public class UpgradePanelController : MonoBehaviour {
 
-
+	UpgradeController upgradeController;
+	public Text scoretext;
 	public Text rangeValueUpgrade;
 	public Text speedValueUpgrade;
 	public Text inboundValueUpgrade;
+	public Text rangeLvlUpgrade;
+	public Text speedLvlUpgrade;
+	public Text inboundLvlUpgrade;
+
+	void Start(){
+		upgradeController = GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ();
+	}
+
 	// Update is called once per frame
 	void Update(){
 
-		Text scoretext = GameObject.Find ("Score").GetComponent<Text> ();
 		float scorevalue = GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore();
-		scoretext.text = scorevalue.ToString() + " souls.";
+		scoretext.text = "Current souls: " + scorevalue.ToString();
 		//Valores
-		rangeValueUpgrade.text = GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getValorRange().ToString();
-		speedValueUpgrade.text = GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getValorSpeed().ToString();
-		inboundValueUpgrade.text = GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getValorInbound().ToString();
+		rangeValueUpgrade.text = costValue(upgradeController.getValorRange().ToString());
+		speedValueUpgrade.text = costValue(upgradeController.getValorSpeed().ToString());
+		inboundValueUpgrade.text = costValue(upgradeController.getValorInbound().ToString());
+		rangeLvlUpgrade.text = "Lv. " + upgradeController.rangeLevel;
+		speedLvlUpgrade.text = "Lv. " + upgradeController.speedLevel;
+		inboundLvlUpgrade.text = "Lv. " + upgradeController.inboundLevel;
 
+	}
+
+	string costValue(string value){
+		return "Cost: " + value; 
 	}
 }
