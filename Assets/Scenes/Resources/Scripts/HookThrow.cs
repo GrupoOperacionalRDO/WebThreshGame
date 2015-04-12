@@ -11,15 +11,21 @@ public class HookThrow : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1")) {	//Se o botao do mouse foi apertado
 			createHook();
 		}
+		if (Input.GetButtonDown ("Fire2")) {
+			if (GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getAnimationCancel ()) // Se pode cancelar a animaçao
+				foreach(GameObject hookToBeDestroyed in GameObject.FindGameObjectsWithTag ("Hook")) // Destroy todos os hooks criados
+					DestroyObject (hookToBeDestroyed); 
+
+		}
 	}
 
 	public void createHook(){
-		if(GameObject.FindGameObjectsWithTag("Hook").Length == 0){ //Se nao existe outro hook
-			Vector3 threshPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-			Vector3 threshScreenPosition = Camera.main.WorldToScreenPoint(threshPosition);
+		if (GameObject.FindGameObjectsWithTag ("Hook").Length == 0) { //Se nao existe outro hook
+			Vector3 threshPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
+			Vector3 threshScreenPosition = Camera.main.WorldToScreenPoint (threshPosition);
 			Vector3 mousePosition = Input.mousePosition; //Pega a posicao do mouse
-			angleo = Mathf.Atan((mousePosition.x - threshScreenPosition.x)/Mathf.Abs(mousePosition.y - threshScreenPosition.y)) * Mathf.Rad2Deg; // Pega o angulo entre a posicao do thresh e onde foi clicado
-			Quaternion angle = Quaternion.AngleAxis(angleo, Vector3.up);	//Transforma o angulo em quaternion
+			angleo = Mathf.Atan ((mousePosition.x - threshScreenPosition.x) / Mathf.Abs (mousePosition.y - threshScreenPosition.y)) * Mathf.Rad2Deg; // Pega o angulo entre a posicao do thresh e onde foi clicado
+			Quaternion angle = Quaternion.AngleAxis (angleo, Vector3.up);	//Transforma o angulo em quaternion
 			Instantiate (prefabHook, threshPosition, angle); //Instancia o hook com esse angulo
 		}
 	}

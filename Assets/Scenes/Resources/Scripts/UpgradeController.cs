@@ -6,12 +6,17 @@ public class UpgradeController : MonoBehaviour {
 	public float speed, speedLevel;
 	public float range, rangeLevel;
 	public int inbound, inboundLevel;
+	public bool penetration;
+	public bool animationCancel;
 	void Start () {
+		penetration = false;
+		animationCancel = false;
 		speed = 100F;
 		range = 100F;
 		inbound = 1;
 		speedLevel = rangeLevel = inboundLevel = 1;
 	}
+
 	//Get's
 	public float getSpeed()
 	{
@@ -25,6 +30,15 @@ public class UpgradeController : MonoBehaviour {
 	{
 		return inbound;	
 	}
+	public bool getPenetration()
+	{
+		return penetration;
+	}
+	public bool getAnimationCancel()
+	{
+		return animationCancel;
+	}
+
 	//Increase's
 	void increaseSpeed()
 	{
@@ -50,6 +64,23 @@ public class UpgradeController : MonoBehaviour {
 			inboundLevel++;
 		}
 	}
+
+	//Set on
+	void setPenetrationOn()
+	{
+		if (GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore () >= getValorPenetration () && !penetration) {
+			GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().removeScore (getValorPenetration ());
+			penetration = true;
+		}
+	}
+	void setAnimationCancelOn()
+	{
+		if (GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().getScore () >= getValorAnimationCancel () && !animationCancel) {
+			GameObject.FindGameObjectWithTag ("HUD").GetComponent<HUDController> ().removeScore (getValorAnimationCancel ());
+			animationCancel = true;
+		}
+	}
+
 	//Calculo dos valores
 	public float getValorSpeed()
 	{
@@ -62,6 +93,14 @@ public class UpgradeController : MonoBehaviour {
 	public float getValorInbound()
 	{
 		return Mathf.Pow (inboundLevel,2);
+	}
+	public float getValorPenetration()
+	{
+		return 100F;
+	}
+	public float getValorAnimationCancel()
+	{
+		return 100F;
 	}
 
 

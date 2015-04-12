@@ -9,6 +9,8 @@ public class UpgradePanelController : MonoBehaviour {
 	public Text rangeValueUpgrade;
 	public Text speedValueUpgrade;
 	public Text inboundValueUpgrade;
+	public Text penetrationValueUpgrade;
+	public Text animationCancelValueUpgrade;
 	public Text rangeLvlUpgrade;
 	public Text speedLvlUpgrade;
 	public Text inboundLvlUpgrade;
@@ -26,6 +28,8 @@ public class UpgradePanelController : MonoBehaviour {
 		rangeValueUpgrade.text = costValue(upgradeController.getValorRange().ToString());
 		speedValueUpgrade.text = costValue(upgradeController.getValorSpeed().ToString());
 		inboundValueUpgrade.text = costValue(upgradeController.getValorInbound().ToString());
+		penetrationValueUpgrade.text = costValue(upgradeController.getValorPenetration().ToString());
+		animationCancelValueUpgrade.text = costValue(upgradeController.getAnimationCancel().ToString());
 		rangeLvlUpgrade.text = "Lv. " + upgradeController.rangeLevel;
 		speedLvlUpgrade.text = "Lv. " + upgradeController.speedLevel;
 		inboundLvlUpgrade.text = "Lv. " + upgradeController.inboundLevel;

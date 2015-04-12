@@ -38,8 +38,20 @@ public class DrawHook : MonoBehaviour
 			GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDController>().addScore(inbound);
 			Instantiate (GetPointAnimation, transform.position, transform.rotation); //Instancia o hook com esse angulo
 		}
-		if (collider.tag != "SoulAnimation")
+		if (canDestroyInSoulCollision(collider))
 			DestroyHook ();
+
+	}
+
+	bool canDestroyInSoulCollision(Collider collider)
+	{
+		if (collider.tag == "SoulAnimation") {
+			return false;
+		}
+		if (GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getPenetration ()) {
+			return false;
+		}
+		return true;
 
 	}
 
