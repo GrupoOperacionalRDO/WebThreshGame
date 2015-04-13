@@ -11,12 +11,6 @@ public class HookThrow : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1")) {	//Se o botao do mouse foi apertado
 			createHook();
 		}
-		if (Input.GetButtonDown ("Fire2")) {
-			if (GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getAnimationCancel ()) // Se pode cancelar a animaçao
-				foreach(GameObject hookToBeDestroyed in GameObject.FindGameObjectsWithTag ("Hook")) // Destroy todos os hooks criados
-					DestroyObject (hookToBeDestroyed); 
-
-		}
 	}
 
 	public void createHook(){
@@ -27,6 +21,8 @@ public class HookThrow : MonoBehaviour
 			angleo = Mathf.Atan ((mousePosition.x - threshScreenPosition.x) / Mathf.Abs (mousePosition.y - threshScreenPosition.y)) * Mathf.Rad2Deg; // Pega o angulo entre a posicao do thresh e onde foi clicado
 			Quaternion angle = Quaternion.AngleAxis (angleo, Vector3.up);	//Transforma o angulo em quaternion
 			Instantiate (prefabHook, threshPosition, angle); //Instancia o hook com esse angulo
+		} else if (GameObject.FindGameObjectWithTag ("UpdateController").GetComponent<UpgradeController> ().getAnimationCancel ()) { // Se pode cancelar a animaçao
+			GameObject.FindGameObjectWithTag ("Hook").GetComponent<DrawHook>().DestroyHook();
 		}
 	}
 

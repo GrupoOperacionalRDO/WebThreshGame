@@ -100,7 +100,7 @@ public class UpgradeController : MonoBehaviour {
 	}
 	public float getValorAnimationCancel()
 	{
-		return 100F;
+		return 10F;
 	}
 
 
